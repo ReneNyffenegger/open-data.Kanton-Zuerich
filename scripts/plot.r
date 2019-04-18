@@ -26,6 +26,10 @@ kt_zh_WB_SEEN_F_ganzer_kanton              <- readOGR(paste0(kt_zh_data_root, 'd
 kt_zh_WB_SEEN_L_ganzer_kanton              <- readOGR(paste0(kt_zh_data_root, 'dataset/offentliche-oberflachengewasser/Ganzer-Kanton' ), 'WB_SEEN_L'                     )
 kt_zh_WB_FLIESSGEWAESSER_L_M_ganzer_kanton <- readOGR(paste0(kt_zh_data_root, 'dataset/offentliche-oberflachengewasser/Ganzer-Kanton' ), 'WB_FLIESSGEWAESSER_L_M'        )
 
+kt_zh_WB_SEEN_F_stadt_zuerich              <- readOGR(paste0(kt_zh_data_root, 'dataset/offentliche-oberflachengewasser/Stadt-Zuerich' ), 'WB_SEEN_F'                     )
+kt_zh_WB_SEEN_L_stadt_zuerich              <- readOGR(paste0(kt_zh_data_root, 'dataset/offentliche-oberflachengewasser/Stadt-Zuerich' ), 'WB_SEEN_L'                     )
+kt_zh_WB_FLIESSGEWAESSER_L_M_stadt_zuerich <- readOGR(paste0(kt_zh_data_root, 'dataset/offentliche-oberflachengewasser/Stadt-Zuerich' ), 'WB_FLIESSGEWAESSER_L_M'        )
+
 
 # ----------------------
 
@@ -45,3 +49,8 @@ plot(kt_zh_WB_SEEN_F_ganzer_kanton             , col='blue', add=TRUE)
 plot(kt_zh_WB_SEEN_F_ganzer_kanton             , col=rgb(alpha=0.4, red=0.0, blue=1.0, green=0.2), add=TRUE)
 plot(kt_zh_WB_SEEN_L_ganzer_kanton             , col='blue', add=TRUE)
 plot(kt_zh_WB_FLIESSGEWAESSER_L_M_ganzer_kanton, col='blue', add=TRUE)
+
+plot(kt_zh_WB_SEEN_F_stadt_zuerich             , col='blue', add=TRUE)
+plot(kt_zh_WB_SEEN_F_stadt_zuerich             , col=rgb(alpha=0.4, red=0.0, blue=1.0, green=0.2), add=TRUE)
+plot(kt_zh_WB_SEEN_L_stadt_zuerich             , col='blue', add=TRUE)
+plot(kt_zh_WB_FLIESSGEWAESSER_L_M_stadt_zuerich, col='blue', add=TRUE)
