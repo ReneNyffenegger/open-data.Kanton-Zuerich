@@ -8,7 +8,8 @@ kt_zh_data_root = paste0(Sys.getenv('github_root'),  'open-data.Kanton-Zuerich/'
 x11()
 library(rgdal)
 
-par(mar=c(0, 0, 0, 0))
+# par(mar=c(0, 0, 0, 0))
+  par(mar=rep(0, 4))
 
 UP_KANTON_F                                <- readOGR(paste0(kt_zh_data_root, 'dataset/gemeindegrenzen'                               ), 'UP_KANTON_F'                   )
 UP_GEMEINDEN_F                             <- readOGR(paste0(kt_zh_data_root, 'dataset/gemeindegrenzen'                               ), 'UP_GEMEINDEN_F'                )
@@ -54,3 +55,12 @@ plot(kt_zh_WB_SEEN_F_stadt_zuerich             , col='blue', add=TRUE)
 plot(kt_zh_WB_SEEN_F_stadt_zuerich             , col=rgb(alpha=0.4, red=0.0, blue=1.0, green=0.2), add=TRUE)
 plot(kt_zh_WB_SEEN_L_stadt_zuerich             , col='blue', add=TRUE)
 plot(kt_zh_WB_FLIESSGEWAESSER_L_M_stadt_zuerich, col='blue', add=TRUE)
+
+plot(GEN_A1_GEMEINDEN_F[ !is.na(GEN_A1_GEMEINDEN_F@data$NAME) & GEN_A1_GEMEINDEN_F@data$NAME == 'Freienstein-Teufen', ])
+plot(GEN_A1_GEMEINDEN_F[                                        GEN_A1_GEMEINDEN_F@data$BFS  == 261                 , ]) # Plot Stadt Zürich
+
+# Sys.setlocale("LC_ALL", 'german')
+# Encoding(levels(GEN_A1_GEMEINDEN_F@data$NAME)) <- 'UTF-8'
+plot(GEN_A1_GEMEINDEN_F[ !is.na(GEN_A1_GEMEINDEN_F@data$NAME) & GEN_A1_GEMEINDEN_F@data$NAME == 'Zürich'        , ])
+plot(GEN_A1_GEMEINDEN_F[ !is.na(GEN_A1_GEMEINDEN_F@data$NAME) & GEN_A1_GEMEINDEN_F@data$NAME == 'Z\xfcrich'     , ])
+plot(GEN_A1_GEMEINDEN_F[ !is.na(GEN_A1_GEMEINDEN_F@data$NAME) & GEN_A1_GEMEINDEN_F@data$NAME == 'Z\xc3\xbcrich' , ])
