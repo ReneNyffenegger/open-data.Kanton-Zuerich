@@ -13,7 +13,7 @@ create table arv_adressen_p (
    ortschaftsname    varchar( 50)       not null,
    kanton            varchar( 50)           null,
    strassenname      varchar(100)       not null,
-   hausnummer        varchar( 10)       not null,
+   hausnummer        varchar( 10)       not null, -- Hausnummer can also be empty (null in Oracle)
 -- geomy             decimal(10, 3)     not null,
 -- geomx             decimal(10, 3)     not null,
    geomy             double             not null,
